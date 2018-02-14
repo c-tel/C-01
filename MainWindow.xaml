@@ -12,14 +12,13 @@
             <RowDefinition Height="59"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Margin="162,2,163,2" HorizontalAlignment="Center" Width="192">Please, choose your birthday date!</Label>
-        <Calendar  x:Name="Cal" FirstDayOfWeek="Monday" 
-                  SelectedDatesChanged="CalendarDatechanged" Margin="0,29,333,12" Grid.Row="0" Grid.RowSpan="3">
-        </Calendar>
-        <TextBlock Name="TextBlockAge" 
-                    TextWrapping="Wrap" Background="Azure" TextAlignment="Left" FontSize="16" Margin="189,3,0,0" Grid.Row="1">
-            Facts about you:
+        <Calendar  FirstDayOfWeek="Monday" Margin="0,29,333,12" Grid.Row="0" Grid.RowSpan="3"
+                   SelectedDate="{Binding BirthDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock TextWrapping="Wrap" Background="Azure" TextAlignment="Left" FontSize="16" Margin="189,3,0,0"
+                   Grid.Row="1" Text="{Binding TextToShow, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--Facts about you:
             <LineBreak></LineBreak>
-            You haven't cosen any date!
-        </TextBlock>
+            You haven't cosen any date!-->
+        
     </Grid>
 </Window>
